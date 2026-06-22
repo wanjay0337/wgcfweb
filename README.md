@@ -4,7 +4,7 @@
 
 5 分鐘就能跑起來，支援輸入 TG 群組的 WARP+ 金鑰，一鍵產生 `.conf` 與 QR Code，適合團隊內部使用。
 
-![界面預覽](https://via.placeholder.com/800x400/1a1a1a/ffffff?text=Black+White+UI+Preview)  
+![界面預覽](wgcfweb.png)  
 *(實際界面為黑白極簡風格)*
 
 ## ✨ 功能特點
