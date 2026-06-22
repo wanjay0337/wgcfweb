@@ -1,8 +1,8 @@
-# wgcfweb
+### wgcfweb
 a good shit i took 5min on it and it works. so i put them up. Grok is so fucking good.
 
 
-##1.安裝必要工具 + wgcf[install tools]
+## 1.安裝必要工具 + wgcf[install tools]
 ```
 Bashapt update
 apt install -y curl wget python3 python3-pip python3-venv git
@@ -16,7 +16,7 @@ chmod +x /usr/local/bin/wgcf
 wgcf --version   # 應該顯示版本
 ```
 
-##2.建立簡單的 Web 介面（Python Flask）[build up a Web(Python Flask)]
+## 2.建立簡單的 Web 介面（Python Flask）[build up a Web(Python Flask)]
 Bashcd /opt/warp-web
 
 # 建立虛擬環境
