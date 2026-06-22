@@ -4,7 +4,7 @@ a good shit i took 5min on it and it works. so i put them up. Grok is so fucking
 
 # 1.安裝必要工具 + wgcf   [install tools]
 ```
-Bashapt update
+apt update
 apt install -y curl wget python3 python3-pip python3-venv git
 ```
 
@@ -227,3 +227,43 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=False)
 EOF
 ```
+
+
+
+測試並啟動
+Bash
+```
+# 先在前台測試（Ctrl+C 結束）
+source venv/bin/activate
+python3 app.py
+```
+
+成功後，你應該能用瀏覽器訪問 http://10.13.100.5 看到網頁。
+點擊按鈕就能生成 config 和 QR Code。
+
+背景運行（推薦用 systemd）：
+```Bash
+# 建立 systemd service
+cat > /etc/systemd/system/warp-web.service << EOF
+[Unit]
+Description=WARP Web Generator
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/warp-web
+ExecStart=/opt/warp-web/venv/bin/python3 /opt/warp-web/app.py
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl daemon-reload
+systemctl enable --now warp-web
+systemctl status warp-web
+```
+
+
+
+如果 wgcf register 失敗：檢查網路 ping 1.1.1.1 和 curl -I https://api.cloudflare.com
