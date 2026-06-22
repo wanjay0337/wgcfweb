@@ -8,7 +8,7 @@ Bashapt update
 apt install -y curl wget python3 python3-pip python3-venv git
 ```
 
-### 下載最新官方 wgcf
+# 下載最新官方 wgcf
 
 ```
 curl -L -o /usr/local/bin/wgcf https://github.com/ViRb3/wgcf/releases/latest/download/wgcf_$(curl -s https://api.github.com/repos/ViRb3/wgcf/releases/latest | grep tag_name | cut -d'"' -f4 | sed 's/v//')_linux_amd64
@@ -19,7 +19,7 @@ wgcf --version   # 應該顯示版本
 ## 2.建立簡單的 Web 介面（Python Flask）[build up a Web(Python Flask)]
 Bashcd /opt/warp-web
 
-### 建立虛擬環境
+# 建立虛擬環境
 ```
 python3 -m venv venv
 source venv/bin/activate
